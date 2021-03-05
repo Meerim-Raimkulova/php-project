@@ -1,0 +1,37 @@
+{% extends 'index.html.twig' %}
+{% block PageCont %}
+<div>
+	<br><br><br>
+		<h2 align = "center">Tablitsadagy  maalymattar</h2>
+						<table border = "1" align="center">
+								<tr>
+									<th>id</th>
+									<th>name</th>
+									<th>kod</th>
+									<th>oblast</th>
+									<th>kalky</th>
+									<th>---</th>
+									<th>---</th>
+								</tr>
+							{% for city in cities%}
+								<tr>
+										<td> {{city.id}} </td>
+										<td> {{city.name}} </td>
+										<td> {{city.kod}} </td>
+										<td> {{city.oblast}} </td>
+										<td> {{city.kalky}} </td>
+										<form method="get" name="key" action="{{path('Delete')}}">
+											<td><input type = "hidden" name = "dId" value="{{city.id}}">
+											<input type="submit" value="delete">
+											</td>
+										</form>
+										<form method="get"  action="{{path('Update')}}">
+											<td><input type = "hidden" name = "uId" value="{{city.id}}">
+											<input type="submit" value="update">
+											</td>
+										</form>
+									</tr>
+							{%endfor%}
+						</table>
+	</div>
+{% endblock %}

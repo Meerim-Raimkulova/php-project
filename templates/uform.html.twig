@@ -1,0 +1,17 @@
+{% extends 'index.html.twig' %}
+{% block PageCont %}
+<div>
+	<br><br><br><br><form action="{{path('Updated')}}" method="get">
+  <input type="text" name="cname" value="{{city.name}}">
+  <br>
+ <input type="text" name="ckod" value="{{city.kod}}">
+  <br>
+  <input type="text" name="coblast" value="{{city.oblast}}">
+  <br>
+  <input type="text" name="ckalky" value="{{city.kalky}}">
+  <br>
+  <input type = "hidden" name = "id" value="{{city.id}}">
+  <input type="submit" value="Submit">
+</form> 
+	</div>
+{% endblock %}

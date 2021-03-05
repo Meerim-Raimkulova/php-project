@@ -1,0 +1,14 @@
+{% extends 'index.html.twig' %}
+{% block PageCont %}
+<div>
+	<br><br><br><br><form action="{{path('find')}}" method="get">
+	 <input type="radio" name="searchBy" value="id" checked>Search by id <br>
+	 <input type="radio" name="searchBy" value="name">Search by name <br>
+	 <input type="radio" name="searchBy" value="kod">Search by kod <br>
+	 <input type="radio" name="searchBy" value="oblast">Search by oblast <br>
+	 <input type="radio" name="searchBy" value="kalky">Search by kalky <br>
+	 <input type="text" name="findBy" placeholder="input value"><br>
+	<input type="submit" value="Submit">
+</form> 
+	</div>
+{% endblock %}
